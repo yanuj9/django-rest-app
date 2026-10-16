@@ -11,3 +11,5 @@ __pycache__/
 
 # Database (if using local SQLite during development)
 db.sqlite3
+
+rough.txt
