@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'students',
     'api',
     'employees',
+    'blogs'
 ]
 
 MIDDLEWARE = [
@@ -128,4 +129,10 @@ MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.LimitOffsetPagination',
+    # 'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination', # Global Pagination works only for genrics / viewsets
+    'PAGE_SIZE':2
 }
