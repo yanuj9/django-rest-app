@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'students',
     'api',
     'employees',
-    'blogs'
+    'blogs',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -134,5 +135,8 @@ MAILERS = {
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.LimitOffsetPagination',
     # 'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination', # Global Pagination works only for genrics / viewsets
-    'PAGE_SIZE':2
+    'PAGE_SIZE':2,
+    'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend'],
+    'SEARCH_PARAM':'q',
+    'ORDERING_PARAM':'order-by',
 }
